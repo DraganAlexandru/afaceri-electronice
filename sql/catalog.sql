@@ -9,7 +9,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `magazin`
 --
-CREATE DATABASE `catalog` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `catalog`;
 USE `catalog`;
 
 -- --------------------------------------------------------
@@ -57,6 +57,24 @@ CREATE TABLE IF NOT EXISTS `products` (
   `updatedAt` timestamp,
   PRIMARY KEY (`id`),
   KEY `id_produse` (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE IF NOT EXISTS `contacts` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(30) DEFAULT NULL,
+  `last_name` varchar(30) DEFAULT NULL,
+  `country` varchar(30) DEFAULT NULL,
+  `subject` varchar(100) DEFAULT NULL,
+  `createdAt` timestamp,
+  `updatedAt` timestamp,
+  PRIMARY KEY (`id`),
+  KEY `id_contacts` (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 
